@@ -122,7 +122,8 @@ TEST(PoolTest, ZeroBorderCost) {
   EXPECT_NEAR(cost, expectedCost, 1e-6);
 }
 
-
-
-
-
+TEST(PoolTest, IdenticalInnerAndOuterRadius) {
+  double cost = calculatePoolCost(5, 5, 1000, 2000);
+  double expectedCost = 2 * PI * 5 * 2000;
+  EXPECT_NEAR(cost, expectedCost, 1e-6);
+}
