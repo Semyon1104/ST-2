@@ -122,7 +122,7 @@ TEST(PoolTest, ZeroBorderCost) {
   EXPECT_NEAR(cost, expectedCost, 1e-6);
 }
 
-TEST(CircleTest, SetRadiusUpdatesFerenceAndArea) {
+TEST(CircleTest, SetRadiusUpdatesFerenceAndAreaLarge) {
   Circle c(5.0);
   c.setRadius(1000.0);
   EXPECT_DOUBLE_EQ(c.getRadius(), 1000.0);
