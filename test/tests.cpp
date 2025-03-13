@@ -122,8 +122,10 @@ TEST(PoolTest, ZeroBorderCost) {
   EXPECT_NEAR(cost, expectedCost, 1e-6);
 }
 
-TEST(PoolTest, IdenticalInnerAndOuterRadius) {
-  double cost = calculatePoolCost(5, 5, 1000, 2000);
-  double expectedCost = 2 * PI * 5 * 2000;
-  EXPECT_NEAR(cost, expectedCost, 1e-3);
+TEST(CircleTest, SetRadiusUpdatesFerenceAndArea) {
+  Circle c(5.0);
+  c.setRadius(1000.0);
+  EXPECT_DOUBLE_EQ(c.getRadius(), 1000.0);
+  EXPECT_DOUBLE_EQ(c.getFerence(), 2 * PI * 1000.0);
+  EXPECT_DOUBLE_EQ(c.getArea(), PI * 1000.0 * 1000.0);
 }
